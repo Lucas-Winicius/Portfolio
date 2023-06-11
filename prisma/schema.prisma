@@ -21,13 +21,24 @@ model courses {
 }
 
 model technologies {
-  id    Int    @id @default(autoincrement())
-  name  String
-  image String
+  id       Int        @id @default(autoincrement())
+  name     String
+  image    String
+  projects projects[]
 }
 
 model social {
   id    Int    @id @default(autoincrement())
   name  String
   image String
+}
+
+model projects {
+  id           Int            @id @default(autoincrement())
+  name         String
+  description  String
+  images       String[]
+  githubLink   String
+  projectLink  String?
+  technologies technologies[]
 }
