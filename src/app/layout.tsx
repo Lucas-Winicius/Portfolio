@@ -1,5 +1,5 @@
 "use client"
-import StyledComponentsRegistry from "../lib/registry";
+import { StyledProvider } from '@/provider/styled-components';
 import "@/styles/globals.css";
 import "../styles/Globals";
 
@@ -13,7 +13,9 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledProvider>
+          {children}
+        </StyledProvider>
       </body>
     </html>
   );
