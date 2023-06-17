@@ -1,15 +1,14 @@
-import StyledComponentsRegistry from '../lib/registry'
-import '@/styles/globals.css'
+"use client"
+import StyledComponentsRegistry from "../lib/registry";
+import "@/styles/globals.css";
+import "../styles/Globals";
 
-export const metadata = {
-  title: 'Portfolio',
-  description: '',
-}
+
  
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html>
@@ -17,5 +16,5 @@ export default function RootLayout({
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
     </html>
-  )
+  );
 }
