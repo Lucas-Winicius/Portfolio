@@ -1,14 +1,16 @@
 import i18n from "i18next";
+
 import { initReactI18next } from "react-i18next";
-import ptBr from "./languages/pt-BR.json";
-import enUs from "./languages/en-US.json";
+
+import ptBR from "./languages/ptBR.json";
+import en from "./languages/en.json";
 
 i18n.use(initReactI18next).init({
-  fallbackLng: "en-US",
+  fallbackLng: "ptBR",
   resources: {
-    "en-US": enUs,
-    "pt-BR": ptBr,
-  },
+    en: en,
+    ptBR: ptBR
+  }
 });
 
 export default i18n;

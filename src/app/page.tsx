@@ -1,22 +1,25 @@
 "use client";
+
+import { styled } from "styled-components";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
+import { LanguageSwitcher } from "@/components/languageSwitcher";
+
+// Exemplo de como acessar os estilos inferidos do arquivo theme.ts dentro do styled-components;
+
+export const Container = styled.div`
+  h1 {
+    font-size: ${(props) => props.theme.font.sizes.medium};
+
+    /* color: ${(props) => props.theme.colors.gray_200}; */
+  }
+`;
 
 export default function Home() {
-  const { t, i18n } = useTranslation();
-
-  const [lang, setLang] = useState("pt-BR");
-
-  const toggleLang = () => {
-    const newLanguage = lang == "pt-BR" ? "en-US" : "pt-BR";
-    setLang(newLanguage);
-    i18n.changeLanguage(lang);
-  };
-
+  const { t } = useTranslation();
   return (
-    <>
-      <h1>{t("title")}</h1>
-      <button onClick={toggleLang}>Troca</button>
-    </>
+    <Container>
+      <h1>{t("titles")}</h1>
+      <LanguageSwitcher />
+    </Container>
   );
 }
