@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <H.header>
-      <Image src={Logo} alt="Logo" width={100} />
+      <Image src={Logo} alt="LW" width={100} />
       <H.nav>
         <ul>
           <li>
