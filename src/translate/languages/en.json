@@ -1,5 +1,15 @@
 {
     "translation": {
-        "titles": "Hello!"
+        "titles": "Hello!",
+        "header": {
+            "button": {
+                "title": "Clique aqui para ver a página em português",
+                "flag": "🇺🇸"
+            },
+            "navigation": {
+                "home": "Home",
+                "contact": "Contact"
+            }
+        }
     }
 }

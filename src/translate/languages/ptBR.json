@@ -1,5 +1,15 @@
 {
     "translation": {
-        "titles": "Olá!"
+        "titles": "Olá!",
+        "header": {
+            "button": {
+                "title": "Click here to view the page in English",
+                "flag": "🇧🇷"
+            },
+            "navigation": {
+                "home": "Início",
+                "contact": "Contato"
+            }
+        }
     }
 }

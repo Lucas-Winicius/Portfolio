@@ -14,7 +14,22 @@ export const nav = styled.nav`
   ul {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 1.3rem;
+  }
+
+  button {
+    span {
+      background-color: #070707;
+      cursor: pointer;
+      font-size: 2em;
+      filter: grayscale(100%);
+      transition: 0.3s;
+
+      &:hover {
+        filter: grayscale(0%);
+      }
+    }
   }
 
   li {
