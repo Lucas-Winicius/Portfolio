@@ -9,7 +9,7 @@ export const StyledComponents = ({ children }: { children: ReactNode }) => {
     <StyledComponentsRegistry>
       <ThemeProvider theme={theme}>
         {children}
-        <GlobalStyles />
+        <GlobalStyles {   } />
       </ThemeProvider>
     </StyledComponentsRegistry>
   );
