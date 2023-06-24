@@ -1,11 +1,12 @@
 import { AppProvider } from "@/provider";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
+import Header from "@/patterns/header/index";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Next template",
-  description: "Criando modelo do next"
+  title: "Lucas Winicius",
+  description: ""
 };
 
 export default function RootLayout({
@@ -16,7 +17,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={inter.className}>
-        <AppProvider>{children}</AppProvider>
+        <AppProvider>
+          <Header />
+          {children}
+        </AppProvider>
       </body>
     </html>
   );
