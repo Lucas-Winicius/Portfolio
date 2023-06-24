@@ -19,22 +19,18 @@ export const nav = styled.nav`
   }
 
   button {
-    @keyframes blur-animation {
-      0% {
-        transform: scale(1) rotate(0deg);
-      }
-      50% {
-        transform: scale(1.3) rotate(-5deg);
-      }
-      100% {
-        transform: scale(1) rotate(0deg);
-      }
-    }
+    position: relative;
     background-color: transparent;
 
     #blur {
       display: none;
-      animation: blur-animation 3s infinite alternate;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      font-size: 2.2em;
+      filter: blur(0);
     }
 
     span {
@@ -47,19 +43,11 @@ export const nav = styled.nav`
     &:hover {
       #blur {
         display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        font-size: 2.2em;
         filter: blur(10px);
       }
 
       span {
         filter: grayscale(0%);
-        position: relative;
-        z-index: 1;
       }
     }
   }
