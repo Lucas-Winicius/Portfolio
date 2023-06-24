@@ -38,6 +38,7 @@ export default function Header() {
           </li>
           <li>
             <button onClick={toggleLang} title={t("header.button.title")}>
+              <span id="blur">{t("header.button.flag")}</span>
               <span>{t("header.button.flag")}</span>
             </button>
           </li>
