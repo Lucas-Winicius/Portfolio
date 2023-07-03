@@ -6,7 +6,7 @@ import ptBR from "./languages/ptBR.json";
 import en from "./languages/en.json";
 
 i18n.use(initReactI18next).init({
-  fallbackLng: "pt-BR",
+  fallbackLng: "ptBR",
   resources: {
     en: en,
     ptBR: ptBR
