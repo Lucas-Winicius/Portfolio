@@ -4,23 +4,23 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../../public/logo.svg";
 import { useTranslation } from "react-i18next";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 export default function Header() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
-  const localLang = localStorage.getItem("language") || "ptBR";
-  const [lang, setLang] = useState(localLang);
+  // const localLang = localStorage.getItem("language") || "ptBR";
+  // const [lang, setLang] = useState(localLang);
 
-  useEffect(() => {
-    i18n.changeLanguage(lang);
-  }, [lang, i18n]);
+  // useEffect(() => {
+  //   i18n.changeLanguage(lang);
+  // }, [lang, i18n]);
 
-  const toggleLang = () => {
-    const newLanguage = lang == "ptBR" ? "en" : "ptBR";
-    setLang(newLanguage);
-    localStorage.setItem("language", newLanguage);
-  };
+  // const toggleLang = () => {
+  //   const newLanguage = lang == "ptBR" ? "en" : "ptBR";
+  //   setLang(newLanguage);
+  //   localStorage.setItem("language", newLanguage);
+  // };
 
   return (
     <H.header>
@@ -37,7 +37,10 @@ export default function Header() {
             <Link href="/">{t("header.navigation.contact")}</Link>
           </li>
           <li>
-            <button onClick={toggleLang} title={t("header.button.title")}>
+            <button
+              onClick={() => console.log("Nothing")}
+              title={t("header.button.title")}
+            >
               <span id="blur">{t("header.button.flag")}</span>
               <span>{t("header.button.flag")}</span>
             </button>
