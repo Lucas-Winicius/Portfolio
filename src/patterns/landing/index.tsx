@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import * as L from "./styled";
 import arrow from "../../../public/arrow.svg";
