@@ -36,7 +36,7 @@ export const primary = styled.div`
 
 export const arrow = styled.div`
   position: absolute;
-  bottom: 0px;
+  bottom: 10px;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
