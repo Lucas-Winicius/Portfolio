@@ -26,6 +26,7 @@ export const Container = styled.div`
     font-weight: bolder;
     border: 2px solid #070707;
     transition: 0.3s;
+    background-color: white;
   }
 
   button:hover {
