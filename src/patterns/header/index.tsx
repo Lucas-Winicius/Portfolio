@@ -4,23 +4,33 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../../public/logo.svg";
 import { useTranslation } from "react-i18next";
-// import { useState, useEffect } from "react";
+import Cookies from "js-cookie";
+import { useState, useEffect } from "react";
 
 export default function Header() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
-  // const localLang = localStorage.getItem("language") || "ptBR";
-  // const [lang, setLang] = useState(localLang);
+  const [lang, setLang] = useState({ lang: "ptBR", firstLoad: true });
 
-  // useEffect(() => {
-  //   i18n.changeLanguage(lang);
-  // }, [lang, i18n]);
+  useEffect(() => {
+    if (lang.firstLoad) {
+      const langG = Cookies.get("lang") as string;
+      setLang({ lang: langG, firstLoad: false });
+    }
 
-  // const toggleLang = () => {
-  //   const newLanguage = lang == "ptBR" ? "en" : "ptBR";
-  //   setLang(newLanguage);
-  //   localStorage.setItem("language", newLanguage);
-  // };
+    Cookies.set("lang", lang.lang, {
+      expires: 7,
+      sameSite: "strict",
+      path: "/"
+    });
+
+    i18n.changeLanguage(lang.lang);
+  }, [lang, i18n]);
+
+  const toggleLang = (): void => {
+    const newLanguage = lang.lang == "ptBR" ? "en" : "ptBR";
+    setLang({ lang: newLanguage, firstLoad: false });
+  };
 
   return (
     <H.header>
@@ -37,10 +47,7 @@ export default function Header() {
             <Link href="/">{t("header.navigation.contact")}</Link>
           </li>
           <li>
-            <button
-              onClick={() => console.log("Nothing")}
-              title={t("header.button.title")}
-            >
+            <button onClick={toggleLang} title={t("header.button.title")}>
               <span id="blur">{t("header.button.flag")}</span>
               <span>{t("header.button.flag")}</span>
             </button>
