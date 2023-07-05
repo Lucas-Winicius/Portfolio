@@ -13,9 +13,9 @@ export const primary = styled.div`
   color: white;
 
   p {
-    color: #dff5a4;
+    color: white;
     width: 100%;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 500;
     text-align: center;
   }
@@ -29,17 +29,16 @@ export const primary = styled.div`
     -webkit-background-clip: text;
     color: transparent;
     background-image: linear-gradient(to right, #f02d3a, #b496e0);
-    font-size: 45px;
+    font-size: 65px;
     font-weight: 600;
   }
 `;
 
 export const arrow = styled.div`
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
 
   p {
     color: #fffa;
@@ -54,21 +53,12 @@ export const arrow = styled.div`
     animation: arrow infinite 3s;
   }
 
-  @keyframes text {
-    0% {
-      color: #fffa;
-    }
-    50% {
-      color: transparent;
-    }
-  }
-
   @keyframes arrow {
     0% {
       transform: translateY(0px) scale(0.7);
     }
     50% {
-      transform: translateY(20px) scale(0.7);
+      transform: translateY(25px) scale(0.7);
     }
   }
 `;
