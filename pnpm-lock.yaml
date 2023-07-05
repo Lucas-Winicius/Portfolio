@@ -32,6 +32,9 @@ dependencies:
   i18next:
     specifier: ^23.2.0
     version: 23.2.3
+  js-cookie:
+    specifier: ^3.0.5
+    version: 3.0.5
   next:
     specifier: 13.4.6
     version: 13.4.6(@babel/core@7.22.5)(react-dom@18.2.0)(react@18.2.0)
@@ -61,6 +64,9 @@ dependencies:
     version: 4.3.8(react@18.2.0)
 
 devDependencies:
+  '@types/js-cookie':
+    specifier: ^3.0.3
+    version: 3.0.3
   '@types/styled-components':
     specifier: ^5.1.26
     version: 5.1.26
@@ -1746,6 +1752,10 @@ packages:
       hoist-non-react-statics: 3.3.2
     dev: true
 
+  /@types/js-cookie@3.0.3:
+    resolution: {integrity: sha512-Xe7IImK09HP1sv2M/aI+48a20VX+TdRJucfq4vfRVy6nWN8PYPOEnlMRSgxJAgYQIXJVL8dZ4/ilAM7dWNaOww==}
+    dev: true
+
   /@types/json-schema@7.0.12:
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==}
     dev: true
@@ -3289,6 +3299,11 @@ packages:
   /jiti@1.18.2:
     resolution: {integrity: sha512-QAdOptna2NYiSSpv0O/BwoHBSmz4YhpzJHyi+fnMRTXFjp7B8i/YG5Z8IfusxB1ufjcD2Sre1F3R+nX3fvy7gg==}
     hasBin: true
+    dev: false
+
+  /js-cookie@3.0.5:
+    resolution: {integrity: sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==}
+    engines: {node: '>=14'}
     dev: false
 
   /js-tokens@4.0.0:
