@@ -10,16 +10,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model courses {
-  id               Int      @id @default(autoincrement())
-  courceName       String
-  description      String
-  institution      String?
-  institutionImage String?
-  conclusionDate   DateTime
-  certificate      String?
-}
-
 model technologies {
   id       Int        @id @default(autoincrement())
   name     String
