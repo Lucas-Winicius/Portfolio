@@ -44,3 +44,15 @@ export async function PUT(request: Request, context: any) {
 
   return NextResponse.json(updatedTechnology, { status: 200 });
 }
+
+export async function DELETE(request: Request, context: any) {
+  const id = parseInt(context?.params?.id) || 0;
+
+  const deletedTechnology = await prisma.technologies.delete({
+    where: {
+      id
+    }
+  });
+
+  return NextResponse.json(deletedTechnology, { status: 200 });
+}
