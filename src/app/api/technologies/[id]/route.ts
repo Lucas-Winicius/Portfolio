@@ -1,23 +1,31 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 
-export async function GET(request: Request, context: any) {
+export async function GET(request: NextRequest, context: any) {
   const id = parseInt(context?.params?.id) || 0;
+  const mode = request.nextUrl.searchParams.get("mode");
 
-  const technology = await prisma.technologies.findUnique({
-    where: {
-      id
+  if (mode === "single") {
+    const technology = await prisma.technologies.findUnique({
+      where: {
+        id
+      }
+    });
+
+    if (!technology) {
+      return NextResponse.json(
+        { status: 404, message: "This technology was not found." },
+        { status: 404 }
+      );
     }
-  });
 
-  if (!technology) {
-    return NextResponse.json(
-      { status: 404, message: "This technology was not found." },
-      { status: 404 }
-    );
+    return NextResponse.json(technology, { status: 200 });
   }
 
-  return NextResponse.json(technology, { status: 200 });
+  if (mode === "all") {
+    const technologies = await prisma.technologies.findMany();
+    return NextResponse.json(technologies, { status: 200 });
+  }
 }
 
 export async function PUT(request: Request, context: any) {
