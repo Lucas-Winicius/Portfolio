@@ -41,4 +41,10 @@ model user {
   appetizer Int
   tempUser  Boolean
   uses      Int?
+  role      Role    @default(TESTER)
+}
+
+enum Role {
+  ADMIN
+  TESTER
 }
