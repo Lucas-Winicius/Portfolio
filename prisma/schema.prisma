@@ -32,3 +32,12 @@ model projects {
   projectLink  String?
   technologies technologies[]
 }
+
+model user {
+  id        Int     @id @default(autoincrement())
+  nick      String
+  pass      String
+  appetizer Int
+  tempUser  Boolean
+  uses      Int?
+}
