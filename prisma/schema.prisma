@@ -35,8 +35,9 @@ model projects {
 
 model user {
   id        Int     @id @default(autoincrement())
-  nick      String
+  nick      String  @unique
   pass      String
+  hex       String  @unique
   appetizer Int
   tempUser  Boolean
   uses      Int?
