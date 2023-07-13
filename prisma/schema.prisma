@@ -14,7 +14,6 @@ model technologies {
   id       Int        @id @default(autoincrement())
   name     String
   image    String
-  projects projects[]
 }
 
 model social {
@@ -30,7 +29,9 @@ model projects {
   images       String[]
   githubLink   String
   projectLink  String?
-  technologies technologies[]
+  hexCode      String         @unique
+  visibility   Visibility     @default(VISIBLE)
+  technologies String[]
 }
 
 model user {
@@ -47,4 +48,9 @@ model user {
 enum Role {
   ADMIN
   TESTER
+}
+
+enum Visibility {
+  INVISIBLE
+  VISIBLE
 }
