@@ -20,9 +20,7 @@ export async function GET(request: NextRequest, context: any) {
     }
 
     return NextResponse.json(social, { status: 200 });
-  }
-
-  if (mode === "all") {
+  } else {
     const social = await prisma.social.findMany();
     return NextResponse.json(social, { status: 200 });
   }

@@ -20,9 +20,7 @@ export async function GET(request: NextRequest, context: any) {
     }
 
     return NextResponse.json(technology, { status: 200 });
-  }
-
-  if (mode === "all") {
+  } else {
     const technologies = await prisma.technologies.findMany();
     return NextResponse.json(technologies, { status: 200 });
   }
