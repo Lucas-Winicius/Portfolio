@@ -103,3 +103,19 @@ export async function PUT(request: Request) {
     return NextResponse.json({ status: 500, error: e }, { status: 500 });
   }
 }
+
+export async function DELETE(request: NextRequest) {
+  const id = request.nextUrl.searchParams.get("id") || "";
+
+  try {
+    const technology = await prisma.technology.delete({
+      where: {
+        id
+      }
+    });
+
+    return NextResponse.json(technology, { status: 200 });
+  } catch (e) {
+    return NextResponse.json({ status: 500, error: e }, { status: 500 });
+  }
+}
