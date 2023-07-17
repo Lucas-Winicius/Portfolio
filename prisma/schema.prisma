@@ -31,6 +31,13 @@ model Technology {
   updatedAt DateTime @updatedAt
 }
 
+model User {
+  id   String @id @default(auto()) @map("_id") @db.ObjectId
+  nick String @unique
+  pass String
+  hex  String @unique
+}
+
 enum Visibility {
   VISIBLE
   INVISIBLE
