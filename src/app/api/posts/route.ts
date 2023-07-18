@@ -64,3 +64,36 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ status: 500, error: e }, { status: 500 });
   }
 }
+
+export async function PUT(request: Request) {
+  const json = await request.json();
+  const requiredKeys = ["id", "title", "content", "tags"];
+  const missingKeys = checkkeys(requiredKeys, json);
+
+  if (missingKeys.length > 0) {
+    return NextResponse.json(
+      {
+        status: 400,
+        message: `You have missed the following parameters: ${missingKeys}`,
+      },
+      { status: 400 }
+    );
+  }
+
+  try {
+    const post = await prisma.post.update({
+      where: {
+        id: json.id,
+      },
+      data: {
+        title: json.title,
+        content: json.content,
+        tags: json.tags,
+      },
+    });
+
+    return NextResponse.json(post, { status: 200 });
+  } catch (e) {
+    return NextResponse.json({ status: 500, error: e }, { status: 500 });
+  }
+}
