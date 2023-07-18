@@ -1,4 +1,4 @@
-function generateHex(number: number): string {
+function generateCode(number: number): string {
     const hexChars = "0123456789-ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz.";
     let hex = "";
   
@@ -11,4 +11,4 @@ function generateHex(number: number): string {
     return hex;
   }
   
-  export default generateHex;
+  export default generateCode;
