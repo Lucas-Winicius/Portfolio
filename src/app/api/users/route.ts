@@ -8,6 +8,17 @@ export async function POST(request: Request) {
   const requiredKeys = ["nick", "pass"];
   const hex = generateCode(100);
   const missingKeys = checkkeys(requiredKeys, json);
+  const ADM_PASS = process.env.ADM_PASS;
+
+  if (json.ADM_PASS != ADM_PASS) {
+    return NextResponse.json(
+      {
+        status: 401,
+        message: "Authentication could not be verified.",
+      },
+      { status: 401 }
+    );
+  }
 
   if (missingKeys.length > 0) {
     return NextResponse.json(
