@@ -1,8 +1,24 @@
 import { NextResponse, NextRequest } from "next/server";
 import checkkeys from "@/lib/checkKeys";
+import { headers } from "next/headers";
+import { decode } from "@/lib/jwt";
 import prisma from "@/lib/prisma";
 
 export async function POST(request: Request) {
+  const Authentication = headers().get("Authentication") || "";
+  const decoded = decode(Authentication);
+
+  if (!decoded.success) {
+    return NextResponse.json(
+      {
+        status: 401,
+        message: "The login information is incorrect. Please log in again.",
+      },
+      {
+        status: 401,
+      }
+    );
+  }
   const json = await request.json();
 
   const requiredKeys = [
@@ -77,6 +93,20 @@ export async function GET(request: NextRequest) {
 }
 
 export async function PUT(request: Request) {
+  const Authentication = headers().get("Authentication") || "";
+  const decoded = decode(Authentication);
+
+  if (!decoded.success) {
+    return NextResponse.json(
+      {
+        status: 401,
+        message: "The login information is incorrect. Please log in again.",
+      },
+      {
+        status: 401,
+      }
+    );
+  }
   const json = await request.json();
 
   const requiredKeys = [
@@ -103,7 +133,7 @@ export async function PUT(request: Request) {
   try {
     const project = await prisma.project.update({
       where: {
-        id: json.id
+        id: json.id,
       },
       data: {
         name: json.name,
@@ -123,12 +153,26 @@ export async function PUT(request: Request) {
 
 export async function DELETE(request: NextRequest) {
   const id = request.nextUrl.searchParams.get("id") || "";
+  const Authentication = headers().get("Authentication") || "";
+  const decoded = decode(Authentication);
+
+  if (!decoded.success) {
+    return NextResponse.json(
+      {
+        status: 401,
+        message: "The login information is incorrect. Please log in again.",
+      },
+      {
+        status: 401,
+      }
+    );
+  }
 
   try {
     const project = await prisma.project.delete({
       where: {
-        id
-      }
+        id,
+      },
     });
 
     return NextResponse.json(project, { status: 200 });
