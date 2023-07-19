@@ -1,22 +1,26 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Montserrat } from 'next/font/google'
+import "@/styles/globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import Header from "@/patterns/Header";
 
-const montserrat = Montserrat({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Lucas Winicius',
-  description: '',
-}
+  title: "Lucas Winicius",
+  description: "",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="pt-BR">
-      <body className={montserrat.className}>{children}</body>
+      <body className={inter.className}>
+        <Header />
+        {children}
+      </body>
     </html>
-  )
+  );
 }
