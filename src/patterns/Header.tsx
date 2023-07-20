@@ -11,7 +11,7 @@ export default function Header() {
         <Image src="/logo.svg" alt="Logo" width={120} height={35.3} />
       </Link>
 
-      <ul className="flex space-x-6">
+      <ul className="flex space-x-7">
         <li>
           <Link className="navLink pb-1" href="/">
             Início
