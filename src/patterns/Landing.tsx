@@ -1,4 +1,3 @@
-"use client";
 import "@/styles/Landing.css";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
@@ -6,7 +5,7 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 
 export default function Landing() {
   return (
-    <div className="flex flex-col items-center justify-center h-[calc(100vh-51px)] relative">
+    <div className="flex flex-col items-center justify-center h-[calc(100vh-51px)]">
       <div className="text-center w-min mt-[-80px]">
         <p className="text-xl tracking-wider">Olá, Me chamo Lucas Winicius</p>
         <h1
