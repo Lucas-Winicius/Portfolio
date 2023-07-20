@@ -7,7 +7,7 @@ export default function Landing() {
   return (
     <div className="flex flex-col items-center justify-center h-[calc(100vh-51px)]">
       <div className="text-center w-min mt-[-80px]">
-        <p className="text-xl tracking-wider">Olá, Me chamo Lucas Winicius</p>
+        <p className="text-2xl tracking-wider">Olá, Me chamo Lucas Winicius</p>
         <h1
           className={
             montserrat.className +
@@ -20,7 +20,7 @@ export default function Landing() {
       <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center mb-5">
         <div className="flex flex-col items-center">
           <p className="mb-7 text-white text-opacity-60">Vamos começar</p>
-          <div className="animate-bounce-slow">
+          <div className="animate-bounce-slow -mb-1">
             <Image src="/Arrow.svg" alt="Seta" width={35} height={19} />
           </div>
         </div>

@@ -6,7 +6,7 @@ import { GithubLogo } from '@phosphor-icons/react'
 
 export default function Header() {
   return (
-    <header className="flex justify-between p-2 px-7">
+    <header className="flex justify-between py-4 px-7">
       <Link href="/">
         <Image src="/logo.svg" alt="Logo" width={120} height={35.3} />
       </Link>
