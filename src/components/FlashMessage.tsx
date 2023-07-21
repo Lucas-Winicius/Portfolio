@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-type FlashMessageProps = {
+export type FlashMessageProps = {
   title?: string;
   message: string;
   duration?: number;

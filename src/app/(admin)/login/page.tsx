@@ -38,7 +38,7 @@ export default function Login() {
       </form>
       <p className="text-slate-50 text-sm mt-4">
         Ainda não tem uma conta?{" "}
-        <Link className="text-blue-500 font-bold" href="/criar-usuario">
+        <Link className="text-blue-500 font-bold" href="/new-user">
           Crie uma aqui!
         </Link>
       </p>
