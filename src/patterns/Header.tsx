@@ -1,8 +1,6 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import "@/styles/Header.css";
-import { GithubLogo } from '@phosphor-icons/react'
 
 export default function Header() {
   return (
@@ -18,13 +16,18 @@ export default function Header() {
           </Link>
         </li>
         <li>
-          <Link className="navLink pb-1" href="/blog">
+          <Link className="navLink pb-1 text-with-line" href="/blog">
             Blog
           </Link>
         </li>
         <li>
           <Link className="navLink pb-1" href="/projects">
             Projetos
+          </Link>
+        </li>
+        <li>
+          <Link className="navLink pb-1" href="/dashboard">
+            Dashboard
           </Link>
         </li>
       </ul>
