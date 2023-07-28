@@ -84,13 +84,6 @@ export default function NewUser() {
           </button>
         </div>
       </form>
-      {flashMessage.show && (
-        <FlashMessage
-          message={flashMessage.message}
-          title={flashMessage.title}
-          color={flashMessage.color}
-        />
-      )}
     </div>
   );
 }
