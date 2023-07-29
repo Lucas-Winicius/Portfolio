@@ -1,15 +1,11 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Header from "@/patterns/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: {
-    template: '%s - Lucas Winicius',
-    default: 'Lucas Winicius',
-  },
+  title: "Login",
   description: "",
 };
 
@@ -19,11 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR">
-      <body className={inter.className}>
-        <Header />
-        {children}
-      </body>
-    </html>
+    <div className="flex items-center justify-center h-[calc(100vh-67px)] flex-col">
+      {children}
+    </div>
   );
 }
