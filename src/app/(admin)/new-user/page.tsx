@@ -46,7 +46,7 @@ export default function NewUser() {
       Cookie.set(`UserToken`, response.auth, cookieConfig);
       Cookie.set(`UserName`, response.user.nick, cookieConfig);
 
-      router.push("/dashboard");
+      router.replace("/dashboard")
     } catch (e: any) {
       const message =
         e.response?.data?.message || "Houve um erro desconhecido :[";

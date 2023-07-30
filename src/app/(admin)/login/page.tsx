@@ -59,14 +59,7 @@ export default function Login() {
       Cookie.set(`UserToken`, response.auth, cookieConfig);
       Cookie.set(`UserName`, response.user.nick, cookieConfig);
 
-      handleFlashMessages(
-        "Login realizado com sucesso. Você será redirecionado em breve.",
-        "green"
-      );
-
-      setTimeout(() => {
-        router.push("/dashboard");
-      }, 2000);
+      router.replace("/dashboard");
     } catch (e: any) {
       const message =
         e.response.data.message || "Houve um erro desconhecido :[";
@@ -109,7 +102,10 @@ export default function Login() {
           </button>
         </form>
         <p className="text-center text-base text-gray-600 pt-2">
-          Caso não possua uma conta. <Link className="text-sky-500" href="/new-user">Crie uma aqui</Link>
+          Caso não possua uma conta.{" "}
+          <Link className="text-sky-500" href="/new-user">
+            Crie uma aqui
+          </Link>
         </p>
       </div>
       <div>
