@@ -53,13 +53,16 @@ export default function Login() {
 
       const cookieConfig = {
         expires: 7,
-        path: '/',
+        path: "/",
       };
 
       Cookie.set(`UserToken`, response.auth, cookieConfig);
       Cookie.set(`UserName`, response.user.nick, cookieConfig);
 
-      handleFlashMessages("Login realizado com sucesso. Você será redirecionado em breve.", "green");
+      handleFlashMessages(
+        "Login realizado com sucesso. Você será redirecionado em breve.",
+        "green"
+      );
 
       setTimeout(() => {
         router.push("/dashboard");
@@ -105,6 +108,9 @@ export default function Login() {
             Login
           </button>
         </form>
+        <p className="text-center text-base text-gray-600 pt-2">
+          Caso não possua uma conta. <Link className="text-sky-500" href="/new-user">Crie uma aqui</Link>
+        </p>
       </div>
       <div>
         {flashMessages.length > 0 &&

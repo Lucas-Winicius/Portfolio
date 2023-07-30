@@ -23,67 +23,46 @@ export default function NewUser() {
 
   return (
     <div className="flex items-center justify-center h-[calc(100vh-67px)]">
-      <form
-        className="form-container bg-white shadow-md rounded px-8 pt-6 pb-8"
-        onSubmit={handleSubmit}
-      >
-        <div className="mb-4 bg-transparent">
-          <label
-            htmlFor="nick"
-            className="block text-gray-700 text-sm font-bold mb-2 bg-transparent"
-          >
-            Nick
-          </label>
-          <input
-            type="text"
-            name="nick"
-            id="nick"
-            value={nick}
-            onChange={(e) => setNick(e.target.value)}
-            className="appearance-none border rounded w-full py-2 bg-transparent px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
+      <div className="max-w-md mx-auto">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div>
+            <input
+              type="text"
+              name="nick"
+              id="nick"
+              placeholder="Nick"
+              className="border-b-2 border-pink-600 px-4 py-2 focus:outline-none focus:border-pink-800 w-full"
+            />
+          </div>
+
+          <div>
+            <input
+              type="password"
+              name="pass"
+              id="pass"
+              placeholder="Password"
+              className="border-b-2 border-pink-600 px-4 py-2 focus:outline-none focus:border-pink-800 w-full"
+            />
+          </div>
+
+          <div className="md:col-span-2">
+            <input
+              type="password"
+              name="ADM_PASS"
+              id="adm_pass"
+              placeholder="Admin key"
+              className="border-b-2 border-pink-600 px-4 py-2 focus:outline-none focus:border-pink-800 w-full"
+            />
+          </div>
         </div>
-        <div className="mb-6 bg-transparent">
-          <label
-            htmlFor="pass"
-            className="block text-gray-700 text-sm font-bold mb-2 bg-transparent"
-          >
-            Password
-          </label>
-          <input
-            type="password"
-            name="pass"
-            id="pass"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="appearance-none border rounded w-full py-2 px-3 bg-transparent text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
-        <div className="mb-6 bg-transparent">
-          <label
-            htmlFor="adm_pass"
-            className="block text-gray-700 text-sm font-bold mb-2 bg-transparent"
-          >
-            Adm pass
-          </label>
-          <input
-            type="password"
-            name="adm_pass"
-            id="adm_pass"
-            value={admPassword}
-            onChange={(e) => setAdmPassword(e.target.value)}
-            className="appearance-none border rounded w-full py-2 px-3 bg-transparent text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
-        <div className="flex items-center justify-center bg-transparent">
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit"
-          >
-            Create user
-          </button>
-        </div>
-      </form>
+
+        <button
+          type="submit"
+          className="w-full mt-4 px-4 py-2 bg-pink-600 text-white rounded-lg"
+        >
+          Criar usuário
+        </button>
+      </div>
     </div>
   );
 }
