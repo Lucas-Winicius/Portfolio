@@ -1,6 +1,7 @@
 "use client";
 import { ChangeEvent, useState } from "react";
 import FlashMessage from "@/components/FlashMessage";
+import Cookie from "js-cookie";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 
@@ -37,7 +38,15 @@ export default function NewUser() {
     try {
       const response = (await axios.post("/api/users", newUser)).data;
 
-      router.push("/login");
+      const cookieConfig = {
+        expires: 7,
+        path: "/",
+      };
+
+      Cookie.set(`UserToken`, response.auth, cookieConfig);
+      Cookie.set(`UserName`, response.user.nick, cookieConfig);
+
+      router.push("/dashboard");
     } catch (e: any) {
       const message =
         e.response?.data?.message || "Houve um erro desconhecido :[";
