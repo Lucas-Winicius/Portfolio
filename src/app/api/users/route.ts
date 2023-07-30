@@ -1,5 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 import checkkeys from "@/lib/checkKeys";
+import { encode } from "@/lib/jwt";
 import prisma from "@/lib/prisma";
 import generateCode from "@/lib/generateCode";
 
@@ -39,7 +40,15 @@ export async function POST(request: Request) {
       },
     });
 
-    return NextResponse.json(user, { status: 201 });
+    const auth = encode({
+      id: user.id,
+      nick: user.nick,
+      hex: user.hex,
+      createdAt: user.createdAt,
+      updatedAt: user.updatedAt,
+    })
+
+    return NextResponse.json({user, auth}, { status: 201 });
   } catch (e) {
     return NextResponse.json({ status: 500, error: e }, { status: 500 });
   }
