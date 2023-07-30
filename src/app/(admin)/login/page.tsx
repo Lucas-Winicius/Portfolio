@@ -51,10 +51,15 @@ export default function Login() {
     try {
       const response = (await axios.post("/api/users/login", login)).data;
 
-      Cookie.set(`UserToken`, response.auth);
-      Cookie.set(`UserName`, response.user.nick);
+      const cookieConfig = {
+        expires: 7,
+        path: '/',
+      };
 
-      handleFlashMessages("Login realizado com sucesso. Você sera redirecionado em breve.", "green");
+      Cookie.set(`UserToken`, response.auth, cookieConfig);
+      Cookie.set(`UserName`, response.user.nick, cookieConfig);
+
+      handleFlashMessages("Login realizado com sucesso. Você será redirecionado em breve.", "green");
 
       setTimeout(() => {
         router.push("/dashboard");
