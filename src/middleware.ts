@@ -3,9 +3,7 @@ import { NextRequest } from "next/server";
 
 export default async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
-  const AuthCookies = req.cookies.has(
-    `UserToken-${process.env.USER_TOKEN_HASH}`
-  );
+  const AuthCookies = req.cookies.has(`UserToken`);
 
   if (pathname === "/dashboard" && !AuthCookies) {
     return NextResponse.redirect(new URL("/login", req.url));
@@ -14,10 +12,9 @@ export default async function middleware(req: NextRequest) {
   if (pathname === "/login" && AuthCookies) {
     return NextResponse.redirect(new URL("/dashboard", req.url));
   }
-  
+
   if (AuthCookies) {
-    const authToken =
-      req.cookies.get(`UserToken-${process.env.USER_TOKEN_HASH}`)?.value || "";
+    const authToken = req.cookies.get(`UserToken`)?.value || "";
 
     const requestHeaders = new Headers(req.headers);
     requestHeaders.set("Authentication", authToken);
