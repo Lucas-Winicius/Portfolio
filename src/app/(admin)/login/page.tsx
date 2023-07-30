@@ -103,7 +103,7 @@ export default function Login() {
         </form>
         <p className="text-center text-base text-gray-600 pt-2">
           Caso não possua uma conta.{" "}
-          <Link className="text-sky-500" href="/new-user">
+          <Link className="text-sky-500" href="/register">
             Crie uma aqui
           </Link>
         </p>
