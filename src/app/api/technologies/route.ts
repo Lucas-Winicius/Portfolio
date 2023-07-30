@@ -4,9 +4,9 @@ import { headers } from "next/headers";
 import { decode } from "@/lib/jwt";
 import prisma from "@/lib/prisma";
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   const json = await request.json();
-  const Authentication = headers().get("Authentication") || "";
+  const Authentication = request.cookies.get("UserToken")?.value || "";
   const decoded = decode(Authentication);
 
   if (!decoded.success) {
@@ -82,9 +82,9 @@ export async function GET(request: NextRequest) {
   }
 }
 
-export async function PUT(request: Request) {
+export async function PUT(request: NextRequest) {
   const json = await request.json();
-  const Authentication = headers().get("Authentication") || "";
+  const Authentication = request.cookies.get("UserToken")?.value || "";
   const decoded = decode(Authentication);
 
   if (!decoded.success) {
@@ -99,11 +99,7 @@ export async function PUT(request: Request) {
     );
   }
 
-  const requiredKeys = [
-    "id",
-    "name",
-    "image"
-  ];
+  const requiredKeys = ["id", "name", "image"];
 
   const missingKeys = checkkeys(requiredKeys, json);
 
@@ -120,7 +116,7 @@ export async function PUT(request: Request) {
   try {
     const technology = await prisma.technology.update({
       where: {
-        id: json.id
+        id: json.id,
       },
       data: {
         name: json.name,
@@ -136,7 +132,7 @@ export async function PUT(request: Request) {
 
 export async function DELETE(request: NextRequest) {
   const id = request.nextUrl.searchParams.get("id") || "";
-  const Authentication = headers().get("Authentication") || "";
+  const Authentication = request.cookies.get("UserToken")?.value || "";
   const decoded = decode(Authentication);
 
   if (!decoded.success) {
@@ -154,8 +150,8 @@ export async function DELETE(request: NextRequest) {
   try {
     const technology = await prisma.technology.delete({
       where: {
-        id
-      }
+        id,
+      },
     });
 
     return NextResponse.json(technology, { status: 200 });

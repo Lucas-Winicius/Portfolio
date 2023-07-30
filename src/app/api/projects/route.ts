@@ -4,8 +4,8 @@ import { headers } from "next/headers";
 import { decode } from "@/lib/jwt";
 import prisma from "@/lib/prisma";
 
-export async function POST(request: Request) {
-  const Authentication = headers().get("Authentication") || "";
+export async function POST(request: NextRequest) {
+  const Authentication = request.cookies.get("UserToken")?.value || "";
   const decoded = decode(Authentication);
 
   if (!decoded.success) {
@@ -92,8 +92,8 @@ export async function GET(request: NextRequest) {
   }
 }
 
-export async function PUT(request: Request) {
-  const Authentication = headers().get("Authentication") || "";
+export async function PUT(request: NextRequest) {
+  const Authentication = request.cookies.get("UserToken")?.value || "";
   const decoded = decode(Authentication);
 
   if (!decoded.success) {
@@ -153,7 +153,7 @@ export async function PUT(request: Request) {
 
 export async function DELETE(request: NextRequest) {
   const id = request.nextUrl.searchParams.get("id") || "";
-  const Authentication = headers().get("Authentication") || "";
+  const Authentication = request.cookies.get("UserToken")?.value || "";
   const decoded = decode(Authentication);
 
   if (!decoded.success) {

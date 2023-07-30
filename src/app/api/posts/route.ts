@@ -4,11 +4,11 @@ import checkkeys from "@/lib/checkKeys";
 import prisma from "@/lib/prisma";
 import { decode } from "@/lib/jwt";
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   const json = await request.json();
   const requiredKeys = ["title", "content", "tags"];
   const missingKeys = checkkeys(requiredKeys, json);
-  const Authentication = headers().get("Authentication") || "";
+  const Authentication = request.cookies.get("UserToken")?.value || "";
   const decoded = decode(Authentication);
 
   if (!decoded.success) {
@@ -81,11 +81,11 @@ export async function GET(request: NextRequest) {
   }
 }
 
-export async function PUT(request: Request) {
+export async function PUT(request: NextRequest) {
   const json = await request.json();
   const requiredKeys = ["id", "title", "content", "tags"];
   const missingKeys = checkkeys(requiredKeys, json);
-  const Authentication = headers().get("Authentication") || "";
+  const Authentication = request.cookies.get("UserToken")?.value || "";
   const decoded = decode(Authentication);
 
   if (!decoded.success) {
@@ -130,7 +130,7 @@ export async function PUT(request: Request) {
 
 export async function DELETE(request: NextRequest) {
   const id = request.nextUrl.searchParams.get("id") || "";
-  const Authentication = headers().get("Authentication") || "";
+  const Authentication = request.cookies.get("UserToken")?.value || "";
   const decoded = decode(Authentication);
 
   if (!decoded.success) {

@@ -4,7 +4,7 @@ import { encode } from "@/lib/jwt";
 import prisma from "@/lib/prisma";
 import generateCode from "@/lib/generateCode";
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   const json = await request.json();
   const requiredKeys = ["nick", "pass"];
   const hex = generateCode(100);
@@ -46,9 +46,9 @@ export async function POST(request: Request) {
       hex: user.hex,
       createdAt: user.createdAt,
       updatedAt: user.updatedAt,
-    })
+    });
 
-    return NextResponse.json({user, auth}, { status: 201 });
+    return NextResponse.json({ user, auth }, { status: 201 });
   } catch (e) {
     return NextResponse.json({ status: 500, error: e }, { status: 500 });
   }

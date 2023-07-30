@@ -12,20 +12,7 @@ export default async function middleware(req: NextRequest) {
   if (pathname === "/login" && AuthCookies) {
     return NextResponse.redirect(new URL("/dashboard", req.url));
   }
-
-  if (AuthCookies) {
-    const authToken = req.cookies.get(`UserToken`)?.value || "";
-
-    const requestHeaders = new Headers(req.headers);
-    requestHeaders.set("Authentication", authToken);
-
-    const response = NextResponse.next({
-      request: {
-        headers: requestHeaders,
-      },
-    });
-  }
-
+  
   return NextResponse.next();
 }
 

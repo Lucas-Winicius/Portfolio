@@ -3,7 +3,7 @@ import checkkeys from "@/lib/checkKeys";
 import { encode } from "@/lib/jwt";
 import prisma from "@/lib/prisma";
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   const json = await request.json();
   const requiredKeys = ["nick", "pass"];
   const missingKeys = checkkeys(requiredKeys, json);
@@ -45,9 +45,9 @@ export async function POST(request: Request) {
       );
     }
 
-    const auth = encode(user)
+    const auth = encode(user);
 
-    return NextResponse.json({user, auth}, { status: 200 });
+    return NextResponse.json({ user, auth }, { status: 200 });
   } catch (e) {
     return NextResponse.json({ status: 500, error: e }, { status: 500 });
   }
