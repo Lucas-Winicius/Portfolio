@@ -15,8 +15,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex items-center justify-center h-[calc(100vh-67px)] flex-col">
-      {children}
+    <div className="flex justify-center">
+      <div className="flex h-[calc(100vh-67px)] flex-row max-w-screen-2xl">
+        {children}
+      </div>
     </div>
   );
 }
