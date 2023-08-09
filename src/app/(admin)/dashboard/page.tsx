@@ -116,12 +116,14 @@ export default function Dashboard() {
           <h1 className="text-center">{user.nick}</h1>
         </div>
       </div>
-      {!data.mode && <EmptyDashboard />}
-      {data.loading && <Loading />}
-      {!data.loading &&
-        !!data.data.length &&
-        data.mode === "projects" &&
-        data.data.map((data, id) => <Project data={data} key={id} />)}
+      <div className="flex flex-wrap w-full max-h-max overflow-y-scroll">
+        {!data.mode && <EmptyDashboard />}
+        {data.loading && <Loading />}
+        {!data.loading &&
+          !!data.data.length &&
+          data.mode === "projects" &&
+          data.data.map((data, id) => <Project data={data} key={id} />)}
+      </div>
     </div>
   );
 }
