@@ -5,7 +5,6 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 function SideBar({ userName }: { userName: string }) {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams()!;
 
   const changeMode = (mode: string): void => {
     const params = new URLSearchParams();
