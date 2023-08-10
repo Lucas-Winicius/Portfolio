@@ -1,3 +1,4 @@
+import CreateProject from "@/components/CreateProject";
 import Loading from "@/components/Loading";
 import Project from "@/components/Project";
 import axios from "axios";
@@ -28,13 +29,14 @@ function ViewProjects() {
       });
   }, []);
 
-  if (!projects) return <Loading />;
+  if (projects == undefined) return <Loading />;
 
   return (
     <>
       {projects.map((data, id) => {
         return <Project data={data} key={id} />;
       })}
+      <CreateProject/>
     </>
   );
 }
