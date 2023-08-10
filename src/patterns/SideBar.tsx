@@ -2,7 +2,7 @@ import { ArrowSquareOut } from "@phosphor-icons/react";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-function SideBar() {
+function SideBar({ userName }: { userName: string }) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams()!;
@@ -43,7 +43,7 @@ function SideBar() {
         </li>
       </ul>
       <div>
-        <h1 className="text-center">teste</h1>
+        <h1 className="text-center">{userName}</h1>
       </div>
     </aside>
   );

@@ -115,6 +115,10 @@ function Project({ data }: { data: ProjectType }) {
       });
   };
 
+  const deleteProject = () => {
+    console.log("deletando")
+  };
+
   return (
     <div className="flex flex-col flex-wrap w-full h-min m-5 space-y-5">
       <input
@@ -227,8 +231,10 @@ function Project({ data }: { data: ProjectType }) {
         )}
       </button>
       <p className="text-sm">Criado {formatDateToNow(projectData.createdAt)}</p>
-      <p className="text-sm">Última atualização: {formatDateToNow(projectData.updatedAt)}</p>
-      {dataDefault !== projectData && (
+      <p className="text-sm">
+        Última atualização: {formatDateToNow(projectData.updatedAt)}
+      </p>
+      {dataDefault !== projectData ? (
         <div className="flex flex-row space-x-2">
           <button
             className="bg-gray-500 bg-opacity-70 hover:bg-opacity-40 text-white font-bold py-2 px-4 rounded"
@@ -243,8 +249,18 @@ function Project({ data }: { data: ProjectType }) {
             Salvar
           </button>
         </div>
+      ) : (
+        <div>
+          <button
+            onClick={deleteProject}
+            className="w-min float-right bg-red-600 p-2 rounded flex space-x-1 items-center hover:bg-red-700 focus:bg-red-700"
+          >
+            <Trash size={20} className="bg-transparent" />
+            <p className="bg-transparent">Apagar</p>
+          </button>
+        </div>
       )}
-      <hr className="border-neutral-800"/>
+      <hr className="border-neutral-800" />
     </div>
   );
 }
