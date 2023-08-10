@@ -127,7 +127,7 @@ function Project({ data }: { data: ProjectType }) {
         value={projectData.name}
         onChange={handleChange}
         placeholder="Nome do projeto"
-        className="p-2 border-b-2 border-pink-600 text-center focus:border-pink-800 mb-3 w-1/3"
+        className="p-2 border-b-2 border-pink-600 text-center focus:border-pink-800 mb-3 w-1/3 bg-transparent"
       />
 
       <textarea
@@ -135,7 +135,7 @@ function Project({ data }: { data: ProjectType }) {
         value={projectData.description}
         onChange={handleChange}
         rows={1}
-        className="border-2 border-pink-600 rounded resize w-1/3 p-2"
+        className="border-2 border-pink-600 rounded resize w-1/3 p-2 bg-transparent"
       />
       <div className="space-y-5 my-5 w-min">
         {projectData.images.map((_, id) => {
@@ -152,6 +152,7 @@ function Project({ data }: { data: ProjectType }) {
                 value={projectData.images[id]}
                 onChange={handleChangeImages}
                 placeholder={`Imagem ${id + 1}`}
+                className="bg-transparent"
               />
               <button onClick={() => removeImage(id)}>
                 <Trash size={16} weight="light" />
@@ -173,6 +174,7 @@ function Project({ data }: { data: ProjectType }) {
           value={projectData.github}
           onChange={handleChange}
           placeholder="Github"
+          className="bg-transparent"
         />
       </div>
       <div className="flex items-center space-x-1">
@@ -184,6 +186,7 @@ function Project({ data }: { data: ProjectType }) {
           value={projectData.url}
           onChange={handleChange}
           placeholder="URL"
+          className="bg-transparent"
         />
       </div>
       <div className="space-y-5 my-5 w-min">
@@ -200,6 +203,7 @@ function Project({ data }: { data: ProjectType }) {
                 value={projectData.technologies[id]}
                 onChange={handleChangeTech}
                 placeholder={`Tecnologia ${id + 1}`}
+                className="bg-transparent"
               />
               <button onClick={() => removeTech(id)}>
                 <Trash size={16} weight="light" />
@@ -214,19 +218,19 @@ function Project({ data }: { data: ProjectType }) {
       </div>
       <button
         onClick={toggleVisibility}
-        className={`w-min py-2 px-4 rounded font-semibold tracking-wider ${
+        className={`w-min py-2 px-4 rounded font-semibold tracking-wider transition-all delay-100 ${
           projectData.visibility === "VISIBLE" ? "bg-green-600" : "bg-red-600"
         }`}
       >
         {projectData.visibility === "VISIBLE" ? (
-          <span className="flex items-center space-x-2 bg-green-600">
-            <Eye size={20} className="bg-green-600" />
-            <p className="bg-green-600 text-sm">Visível</p>
+          <span className="flex items-center space-x-2">
+            <Eye size={20} />
+            <p className="text-sm">Visível</p>
           </span>
         ) : (
-          <span className="flex items-center space-x-2 bg-red-600">
-            <EyeSlash size={20} className="bg-red-600" />
-            <p className="bg-red-600 text-sm">Invisivel</p>
+          <span className="flex items-center space-x-2">
+            <EyeSlash size={20} />
+            <p className="text-sm">Invisivel</p>
           </span>
         )}
       </button>
