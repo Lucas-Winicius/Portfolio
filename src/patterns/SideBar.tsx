@@ -17,7 +17,7 @@ function SideBar() {
   };
 
   return (
-    <div className="h-[calc(100vh-67px)] flex flex-col p-4 justify-between border-r-2 border-zinc-800 w-52">
+    <aside className="h-[calc(100vh-67px)] flex flex-col p-4 justify-between border-r-2 border-zinc-800 w-52">
       <ul className="flex space-y-2 flex-col">
         <li
           className="py-1 hover:bg-zinc-700 px-2 rounded-sm cursor-pointer"
@@ -45,7 +45,7 @@ function SideBar() {
       <div>
         <h1 className="text-center">teste</h1>
       </div>
-    </div>
+    </aside>
   );
 }
 
