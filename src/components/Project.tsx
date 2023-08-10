@@ -116,7 +116,10 @@ function Project({ data }: { data: ProjectType }) {
   };
 
   const deleteProject = () => {
-    console.log("deletando")
+    axios.delete("/api/projects", { data: projectData })
+      .then(response => {
+        document.location.reload()
+      })
   };
 
   return (
