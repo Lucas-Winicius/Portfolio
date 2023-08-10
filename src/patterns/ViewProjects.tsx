@@ -1,3 +1,3 @@
-function ViewProjects() {
-    
-}
+function ViewProjects() {}
+
+export default ViewProjects;
