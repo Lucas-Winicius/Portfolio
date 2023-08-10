@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import SideBar from "@/patterns/SideBar";
+import DashboardManager from "@/patterns/DashboardManager";
 
 interface User {
   id: string;
@@ -42,7 +43,7 @@ export default function Dashboard() {
     <div className="flex w-screen">
       <SideBar userName={user.nick} />
       <div className="flex flex-wrap w-full max-h-max overflow-y-scroll">
-
+        <DashboardManager />
       </div>
     </div>
   );
