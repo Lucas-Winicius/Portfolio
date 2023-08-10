@@ -26,7 +26,7 @@ function ViewProjects() {
       .then((data) => {
         setProjects(data);
       });
-  });
+  }, []);
 
   if (!projects) return <Loading />;
 
