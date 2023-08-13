@@ -19,29 +19,35 @@ function SideBar({ userName }: { userName: string }) {
   return (
     <aside className="h-[calc(100vh-67px)] flex flex-col py-4 justify-between border-r-2 border-zinc-800 w-52">
       <ul className="flex space-y-2 flex-col">
-        <li
-          className={`py-1 hover:bg-zinc-900 transition px-4 cursor-pointer ${
-            mode === "projects" ? "bg-zinc-800 bg-opacity-80" : ""
-          }`}
-          onClick={() => changeMode("projects")}
-        >
-          Projetos
+        <li>
+          <button
+            onClick={() => changeMode("projects")}
+            className={`py-1 hover:bg-zinc-900 transition px-4 cursor-pointer w-full text-left ${
+              mode === "projects" ? "bg-zinc-800 bg-opacity-80" : ""
+            }`}
+          >
+            Projetos
+          </button>
         </li>
-        <li
-          className={`py-1 hover:bg-zinc-900 px-4 rounded-sm cursor-pointer ${
-            mode === "posts" ? "bg-zinc-800 bg-opacity-80" : ""
-          }`}
-          onClick={() => changeMode("posts")}
-        >
-          Postagens
+        <li>
+          <button
+            onClick={() => changeMode("posts")}
+            className={`py-1 hover:bg-zinc-900 px-4 rounded-sm cursor-pointer w-full text-left ${
+              mode === "posts" ? "bg-zinc-800 bg-opacity-80" : ""
+            }`}
+          >
+            Postagens
+          </button>
         </li>
-        <li
-          className={`py-1 hover:bg-zinc-900 px-4 rounded-sm cursor-pointer ${
-            mode === "technologies" ? "bg-zinc-800 bg-opacity-80" : ""
-          }`}
-          onClick={() => changeMode("technologies")}
-        >
-          Tecnologias
+        <li>
+          <button
+            className={`py-1 hover:bg-zinc-900 px-4 rounded-sm cursor-pointer w-full text-left ${
+              mode === "technologies" ? "bg-zinc-800 bg-opacity-80" : ""
+            }`}
+            onClick={() => changeMode("technologies")}
+          >
+            Tecnologias
+          </button>
         </li>
         <li className="py-1 px-4 rounded-sm cursor-pointer flex items-center space-x-2">
           <Link href="/register">Criar Usuario</Link>

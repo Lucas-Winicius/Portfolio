@@ -75,7 +75,7 @@ export default function NewUser() {
                 name="nick"
                 id="nick"
                 placeholder="Nick"
-                className="border-b-2 border-pink-600 px-4 py-2 focus:outline-none focus:border-pink-800 w-full"
+                className="border-b-2 border-pink-600 px-4 py-2 focus:outline-none focus:border-pink-800 w-full bg-transparent"
                 onChange={handleInputChange}
               />
             </div>
@@ -86,7 +86,7 @@ export default function NewUser() {
                 name="pass"
                 id="pass"
                 placeholder="Password"
-                className="border-b-2 border-pink-600 px-4 py-2 focus:outline-none focus:border-pink-800 w-full"
+                className="border-b-2 border-pink-600 px-4 py-2 focus:outline-none focus:border-pink-800 w-full bg-transparent"
                 onChange={handleInputChange}
               />
             </div>
@@ -97,7 +97,7 @@ export default function NewUser() {
                 name="ADM_PASS"
                 id="adm_pass"
                 placeholder="Admin key"
-                className="border-b-2 border-pink-600 px-4 py-2 focus:outline-none focus:border-pink-800 w-full"
+                className="border-b-2 border-pink-600 px-4 py-2 focus:outline-none focus:border-pink-800 w-full bg-transparent"
                 onChange={handleInputChange}
               />
             </div>

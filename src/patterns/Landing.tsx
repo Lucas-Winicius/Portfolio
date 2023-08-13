@@ -5,7 +5,7 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 
 export default function Landing() {
   return (
-    <div className="flex flex-col items-center justify-center h-[calc(100vh-51px)]">
+    <div className="flex flex-col items-center justify-center h-[calc(100vh-67px)]">
       <div className="text-center w-min mt-[-80px]">
         <p className="text-2xl tracking-wider">Olá, Me chamo Lucas Winicius</p>
         <h1
