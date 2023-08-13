@@ -3,8 +3,9 @@ import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 function SideBar({ userName }: { userName: string }) {
-  const router = useRouter();
+  const mode = useSearchParams().get("mode");
   const pathname = usePathname();
+  const router = useRouter();
 
   const changeMode = (mode: string): void => {
     const params = new URLSearchParams();
@@ -16,27 +17,33 @@ function SideBar({ userName }: { userName: string }) {
   };
 
   return (
-    <aside className="h-[calc(100vh-67px)] flex flex-col p-4 justify-between border-r-2 border-zinc-800 w-52">
+    <aside className="h-[calc(100vh-67px)] flex flex-col py-4 justify-between border-r-2 border-zinc-800 w-52">
       <ul className="flex space-y-2 flex-col">
         <li
-          className="py-1 hover:bg-zinc-700 px-2 rounded-sm cursor-pointer"
+          className={`py-1 hover:bg-zinc-900 transition px-4 cursor-pointer ${
+            mode === "projects" ? "bg-zinc-800 bg-opacity-80" : ""
+          }`}
           onClick={() => changeMode("projects")}
         >
           Projetos
         </li>
         <li
-          className="py-1 hover:bg-zinc-700 px-2 rounded-sm cursor-pointer"
+          className={`py-1 hover:bg-zinc-900 px-4 rounded-sm cursor-pointer ${
+            mode === "posts" ? "bg-zinc-800 bg-opacity-80" : ""
+          }`}
           onClick={() => changeMode("posts")}
         >
           Postagens
         </li>
         <li
-          className="py-1 hover:bg-zinc-700 px-2 rounded-sm cursor-pointer"
+          className={`py-1 hover:bg-zinc-900 px-4 rounded-sm cursor-pointer ${
+            mode === "technologies" ? "bg-zinc-800 bg-opacity-80" : ""
+          }`}
           onClick={() => changeMode("technologies")}
         >
           Tecnologias
         </li>
-        <li className="py-1 px-2 rounded-sm cursor-pointer flex items-center space-x-2">
+        <li className="py-1 px-4 rounded-sm cursor-pointer flex items-center space-x-2">
           <Link href="/register">Criar Usuario</Link>
           <ArrowSquareOut size={20} />
         </li>
