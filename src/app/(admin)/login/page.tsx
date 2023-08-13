@@ -57,9 +57,8 @@ export default function Login() {
       };
 
       Cookie.set(`UserToken`, response.auth, cookieConfig);
-      Cookie.set(`UserName`, response.user.nick, cookieConfig);
 
-      router.replace("/dashboard");
+      router.replace("/dashboard", { scroll: false });
     } catch (e: any) {
       const message =
         e.response.data.message || "Houve um erro desconhecido :[";
@@ -77,7 +76,7 @@ export default function Login() {
                 name="nick"
                 id="nick"
                 placeholder="Nick"
-                className="border-b-2 border-pink-600 px-4 py-2 focus:outline-none focus:border-pink-800 w-full"
+                className="border-b-2 border-pink-600 px-4 py-2 focus:outline-none focus:border-pink-800 w-full bg-transparent"
                 onChange={handleInputChange}
               />
             </div>
@@ -88,7 +87,7 @@ export default function Login() {
                 name="pass"
                 id="password"
                 placeholder="Password"
-                className="border-b-2 border-pink-600 px-4 py-2 focus:outline-none focus:border-pink-800 w-full"
+                className="border-b-2 border-pink-600 px-4 py-2 focus:outline-none focus:border-pink-800 w-full bg-transparent"
                 onChange={handleInputChange}
               />
             </div>
