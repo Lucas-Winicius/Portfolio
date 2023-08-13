@@ -1,3 +1,4 @@
+import CreatePost from "@/components/CreatePost";
 import Loading from "@/components/Loading";
 import Post from "@/components/Post";
 import axios from "axios";
@@ -29,6 +30,7 @@ function ViewPosts() {
       {posts.map((post, id) => (
         <Post data={post} key={id} />
       ))}
+      <CreatePost />
     </>
   );
 }
