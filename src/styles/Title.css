@@ -1,0 +1,16 @@
+.pink-title {
+    position: relative;
+    width: max-content;
+    padding: 0px 8px;
+    font-weight: bold;
+}
+
+.pink-title::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #D9F99D;
+}
