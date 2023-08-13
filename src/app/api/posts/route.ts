@@ -129,7 +129,7 @@ export async function PUT(request: NextRequest) {
 }
 
 export async function DELETE(request: NextRequest) {
-  const id = request.nextUrl.searchParams.get("id") || "";
+  const { id } = await request.json();
   const Authentication = request.cookies.get("UserToken")?.value || "";
   const decoded = decode(Authentication);
 
