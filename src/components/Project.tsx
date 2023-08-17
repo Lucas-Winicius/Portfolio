@@ -145,7 +145,7 @@ function Project({ data }: { data: ProjectType }) {
           return (
             <div
               key={id}
-              className="p-2 border-b-2 border-pink-600 text-center mb-3 flex"
+              className="p-2 border-b-2 border-pink-600 text-center mb-3 flex space-x-3"
             >
               <input
                 type="text"
@@ -157,8 +157,8 @@ function Project({ data }: { data: ProjectType }) {
                 placeholder={`Imagem ${id + 1}`}
                 className="bg-transparent"
               />
-              <button onClick={() => removeImage(id)}>
-                <Trash size={16} weight="light" />
+              <button onClick={() => removeImage(id)} className="cursor-pointer p-1 rounded hover:scale-125 hover:bg-red-600 transition">
+                <Trash size={16} />
               </button>
             </div>
           );
@@ -197,7 +197,7 @@ function Project({ data }: { data: ProjectType }) {
           return (
             <div
               key={id}
-              className="p-2 border-b-2 border-pink-600 text-center mb-3 flex"
+              className="p-2 border-b-2 border-pink-600 text-center mb-3 flex space-x-3"
             >
               <input
                 type="text"
@@ -208,8 +208,8 @@ function Project({ data }: { data: ProjectType }) {
                 placeholder={`Tecnologia ${id + 1}`}
                 className="bg-transparent"
               />
-              <button onClick={() => removeTech(id)}>
-                <Trash size={16} weight="light" />
+              <button onClick={() => removeTech(id)} className="cursor-pointer p-1 rounded hover:scale-125 hover:bg-red-600 transition">
+                <Trash size={16} />
               </button>
             </div>
           );
