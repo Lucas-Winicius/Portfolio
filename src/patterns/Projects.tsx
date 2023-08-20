@@ -4,7 +4,7 @@ import ProjectContainer from "@/components/ProjectContainer";
 import Title from "@/components/Title";
 import {
   filterVisibleProjects,
-  getLastFourOrLess,
+  getLastTwoOrLess,
 } from "@/lib/preojectsMethods";
 import { ArrowRight } from "@phosphor-icons/react";
 import axios from "axios";
@@ -34,9 +34,8 @@ function Projects() {
       .then((data) => {
         const visibleProjects = filterVisibleProjects(data);
         const lastFourProjects: ProjectType[] =
-          getLastFourOrLess(visibleProjects);
+          getLastTwoOrLess(visibleProjects);
 
-        console.log(lastFourProjects);
         setProjects(lastFourProjects);
       });
   }, []);
@@ -59,9 +58,9 @@ function Projects() {
         {!!projects?.length && (
           <Link
             href="/projects"
-            className={`flex items-center space-x-2 bg-pink-600 py-2 px-4 rounded hover:bg-pink-700 transition-colors`}
+            className={`flex items-center space-x-2 py-2 px-4 rounded hover:bg-pink-600 transition-colors`}
           >
-            <p className="text-xs">Ver mais</p>
+            <p>Ver mais</p>
             <ArrowRight size={16} />
           </Link>
         )}

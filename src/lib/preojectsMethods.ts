@@ -15,6 +15,6 @@ export function filterVisibleProjects(projects: ProjectType[]): ProjectType[] {
   return projects.filter((project) => project.visibility === "VISIBLE");
 }
 
-export function getLastFourOrLess<T>(array: T[]): T[] {
-  return array.slice(-4);
+export function getLastTwoOrLess<T>(array: T[]): T[] {
+  return array.slice(-2);
 }
