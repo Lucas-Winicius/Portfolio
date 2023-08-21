@@ -58,7 +58,7 @@ function Projects() {
         {!!projects?.length && (
           <Link
             href="/projects"
-            className={`flex items-center space-x-2 py-2 px-4 rounded hover:bg-pink-600 transition-colors`}
+            className={`flex items-center space-x-2 py-2 px-4 rounded text-zinc-500 hover:text-zinc-50 transition-colors arrow-animation`}
           >
             <p>Ver mais</p>
             <ArrowRight size={16} />

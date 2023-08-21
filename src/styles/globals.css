@@ -57,3 +57,15 @@ strong::after {
   height: 2px;
   background-color: #db2777;
 }
+
+.arrow-animation > *:nth-child(2) {
+  transform-origin: center bottom;
+  transition: transform 0.3s ease;
+}
+
+
+.arrow-animation:hover > *:nth-child(2),
+.arrow-animation:focus > *:nth-child(2) {
+  transform: translateX(5px);
+}
+

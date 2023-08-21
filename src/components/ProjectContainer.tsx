@@ -35,11 +35,11 @@ function ProjectContainer({ data }: { data: ProjectType }) {
         </div>
         <div className="flex flex-row justify-between items-end">
           <div className="flex space-x-3">
-            <Link href={data.github} className="flex items-center space-x-2 bg-pink-600 py-2 px-4 rounded hover:bg-pink-700 transition-colors" >
+            <Link href={data.github} className="flex items-center space-x-2 bg-pink-600 py-2 px-4 rounded hover:bg-pink-700 transition-colors arrow-animation" >
               <p className="text-xs">GitHub</p>
               <ArrowRight size={16} />
             </Link>
-            <Link href={data.url || ""} className={`flex items-center space-x-2 bg-pink-600 py-2 px-4 rounded hover:bg-pink-700 transition-colors ${data.url ? "" : "hidden"}`}>
+            <Link href={data.url || ""} className={`flex items-center space-x-2 bg-pink-600 py-2 px-4 rounded hover:bg-pink-700 transition-colors arrow-animation ${data.url ? "" : "hidden"}`}>
               <p className="text-xs">Visualizar</p>
               <ArrowRight size={16} />
             </Link>
