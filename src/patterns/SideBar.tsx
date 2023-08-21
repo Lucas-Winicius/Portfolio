@@ -32,7 +32,7 @@ function SideBar({ userName }: { userName: string }) {
         <li>
           <button
             onClick={() => changeMode("posts")}
-            className={`py-1 hover:bg-zinc-900 px-4 rounded-sm cursor-pointer w-full text-left ${
+            className={`py-1 hover:bg-zinc-900 px-4 cursor-pointer w-full text-left ${
               mode === "posts" ? "bg-zinc-800 bg-opacity-80" : ""
             }`}
           >
@@ -41,7 +41,17 @@ function SideBar({ userName }: { userName: string }) {
         </li>
         <li>
           <button
-            className={`py-1 hover:bg-zinc-900 px-4 rounded-sm cursor-pointer w-full text-left ${
+            className={`py-1 hover:bg-zinc-900 px-4 cursor-pointer w-full text-left ${
+              mode === "messages" ? "bg-zinc-800 bg-opacity-80" : ""
+            }`}
+            onClick={() => changeMode("messages")}
+          >
+            Mensagens
+          </button>
+        </li>
+        <li>
+          <button
+            className={`py-1 hover:bg-zinc-900 px-4 cursor-pointer w-full text-left ${
               mode === "technologies" ? "bg-zinc-800 bg-opacity-80" : ""
             }`}
             onClick={() => changeMode("technologies")}
@@ -49,7 +59,7 @@ function SideBar({ userName }: { userName: string }) {
             Tecnologias
           </button>
         </li>
-        <li className="py-1 px-4 rounded-sm cursor-pointer flex items-center space-x-2">
+        <li className="py-1 px-4 cursor-pointer flex items-center space-x-2">
           <Link href="/register">Criar Usuario</Link>
           <ArrowSquareOut size={20} />
         </li>
