@@ -58,6 +58,16 @@ model Message {
   updatedAt DateTime @updatedAt
 }
 
+model About {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  aboutText String
+  instagram String?
+  github    String?
+  linkedin  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 enum Visibility {
   VISIBLE
   INVISIBLE
