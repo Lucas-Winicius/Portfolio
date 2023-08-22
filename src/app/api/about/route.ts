@@ -63,9 +63,6 @@ export async function POST(request: NextRequest) {
 export async function GET(request: NextRequest) {
   try {
     const about = await prisma.about.findFirst();
-    const gitApi = await (
-      await fetch("https://api.github.com/users/Lucas-Winicius")
-    ).json();
 
     if (!about) {
       return NextResponse.json(
@@ -73,6 +70,10 @@ export async function GET(request: NextRequest) {
         { status: 404 }
       );
     }
+    
+    const gitApi = await (
+      await fetch("https://api.github.com/users/Lucas-Winicius")
+    ).json();
 
     return NextResponse.json({ ...about, gitApi }, { status: 200 });
   } catch (e) {

@@ -52,6 +52,16 @@ function SideBar({ userName }: { userName: string }) {
         <li>
           <button
             className={`py-1 hover:bg-zinc-900 px-4 cursor-pointer w-full text-left ${
+              mode === "about" ? "bg-zinc-800 bg-opacity-80" : ""
+            }`}
+            onClick={() => changeMode("about")}
+          >
+            Sobre
+          </button>
+        </li>
+        <li>
+          <button
+            className={`py-1 hover:bg-zinc-900 px-4 cursor-pointer w-full text-left ${
               mode === "technologies" ? "bg-zinc-800 bg-opacity-80" : ""
             }`}
             onClick={() => changeMode("technologies")}
