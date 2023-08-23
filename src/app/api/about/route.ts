@@ -70,12 +70,8 @@ export async function GET(request: NextRequest) {
         { status: 404 }
       );
     }
-    
-    const gitApi = await (
-      await fetch("https://api.github.com/users/Lucas-Winicius")
-    ).json();
 
-    return NextResponse.json({ ...about, gitApi }, { status: 200 });
+    return NextResponse.json(about, { status: 200 });
   } catch (e) {
     return NextResponse.json({ status: 500, error: e }, { status: 500 });
   }
