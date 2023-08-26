@@ -19,7 +19,7 @@ function GitHub({ showText }: { showText?: boolean }) {
       <Link
         target="_blank"
         href={github}
-        className="flex flex-row space-x-1 items-center opacity-70 hover:opacity-100 focus:opacity-100 hover:scale-150 focus:scale-150 transition-all"
+        className="flex flex-row space-x-1 items-center opacity-70 hover:opacity-100 focus:opacity-100 hover:scale-125 focus:scale-125 transition-all"
       >
         <GithubLogo size={20} />
         <span className={`flex flex-row space-x-2 ${!showText && "hidden"}`}>
