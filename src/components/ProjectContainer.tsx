@@ -19,11 +19,11 @@ type ProjectType = {
 
 function ProjectContainer({ data }: { data: ProjectType }) {
   return (
-    <div className="flex flex-row space-x-3 w-3/4">
+    <div className="flex flex-row items-center space-x-3 w-3/4 h-max">
       <div>
         <Carousel images={data.images} height={350} width={350} className="cursor-pointer" />
       </div>
-      <div className="flex flex-col justify-between w-full">
+      <div className="flex flex-col justify-between w-full space-y-3 h-max">
         <div className="space-y-2">
           <h1 className="font-bold text-lg">{data.name}</h1>
           <p className="text-base">{data.description}</p>
@@ -33,7 +33,7 @@ function ProjectContainer({ data }: { data: ProjectType }) {
             ))}
           </div>
         </div>
-        <div className="flex flex-row justify-between items-end">
+        <div className="flex flex-row justify-between items-end space-x-3">
           <div className="flex space-x-3">
             <Link href={data.github} className="flex items-center space-x-2 bg-pink-600 py-2 px-4 rounded hover:bg-pink-700 transition-colors arrow-animation" >
               <p className="text-xs">GitHub</p>
