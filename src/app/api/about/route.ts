@@ -61,6 +61,8 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET(request: NextRequest) {
+  const mode = request.nextUrl.searchParams.get("mode");
+
   try {
     const about = await prisma.about.findFirst();
 
@@ -70,6 +72,18 @@ export async function GET(request: NextRequest) {
         { status: 404 }
       );
     }
+
+    if (mode === "about")
+      return NextResponse.json({ about: about.aboutText }, { status: 200 });
+
+    if (mode === "github")
+      return NextResponse.json({ github: about.github }, { status: 200 });
+
+    if (mode === "instagram")
+      return NextResponse.json({ instagram: about.instagram }, { status: 200 });
+
+    if (mode === "linkedin")
+      return NextResponse.json({ linkedin: about.linkedin }, { status: 200 });
 
     return NextResponse.json(about, { status: 200 });
   } catch (e) {
