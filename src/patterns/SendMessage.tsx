@@ -40,7 +40,7 @@ function SendMessage() {
       <input
         type="email"
         name="email"
-        className="text-zinc-950 px-4 py-1 rounded"
+        className="text-zinc-950 px-4 py-1 rounded bg-slate-100"
         placeholder="Insira seu email"
         value={message.email}
         onChange={handleChange}
@@ -48,20 +48,20 @@ function SendMessage() {
       <input
         type="text"
         name="title"
-        className="text-zinc-950 px-4 py-1 rounded"
+        className="text-zinc-950 px-4 py-1 rounded bg-slate-100"
         placeholder="Titulo"
         value={message.title}
         onChange={handleChange}
         />
       <textarea
         name="content"
-        className="text-zinc-950 px-4 py-1 rounded"
+        className="text-zinc-950 px-4 py-1 rounded bg-slate-100"
         placeholder="Conteudo"
         value={message.content}
         onChange={handleChange}
       />
       <button
-        className="bg-indigo-500 py-2 rounded hover:bg-indigo-600 focus:bg-indigo-600"
+        className="bg-pink-600 py-2 rounded hover:bg-pink-700 focus:bg-pink-700"
         onClick={sendMessage}
       >
         Enviar
