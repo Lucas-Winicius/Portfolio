@@ -2,9 +2,7 @@
 import FlashMessage from "@/components/FlashMessage";
 import axios from "axios";
 import Cookie from "js-cookie";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { NextResponse } from "next/server";
 import { ChangeEvent, useState } from "react";
 
 type FlashMessageTypes = {
@@ -18,7 +16,6 @@ type FlashHandler = (
 ) => void;
 
 export default function Login() {
-  const router = useRouter();
   const [flashMessages, setFlashMessages] = useState<FlashMessageTypes[]>([]);
 
   const [login, setLogin] = useState({
@@ -58,7 +55,7 @@ export default function Login() {
 
       Cookie.set(`UserToken`, response.auth, cookieConfig);
 
-      router.replace("/dashboard", { scroll: false });
+      window.location.reload();
     } catch (e: any) {
       const message =
         e.response.data.message || "Houve um erro desconhecido :[";
