@@ -6,7 +6,12 @@ const ArrowToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleScroll = () => {
-    if (window.scrollY > 300) {
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const bodyHeight = document.body.scrollHeight;
+    const pixelsRemaining = bodyHeight - (scrollY + windowHeight);
+
+    if (window.scrollY > 300 && pixelsRemaining > 65) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
