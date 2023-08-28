@@ -20,7 +20,7 @@ function Cookies() {
 
   return (
     <div
-      className={`fixed left-4 bottom-4 w-1/4 bg-slate-100 rounded p-2 text-zinc-950 font-bold space-y-2 ${
+      className={`fixed left-4 bottom-4 w-2/4 bg-slate-100 rounded p-2 text-zinc-950 font-bold space-y-2 lg:w-1/4 ${
         hide && "hidden"
       }`}
     >
