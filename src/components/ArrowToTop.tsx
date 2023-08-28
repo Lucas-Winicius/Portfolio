@@ -39,7 +39,9 @@ const ArrowToTop = () => {
       }`}
       onClick={scrollToTop}
     >
-      <CaretCircleUp className="cursor-pointer" size={45} />
+      <button>
+        <CaretCircleUp size={45} />
+      </button>
     </div>
   );
 };

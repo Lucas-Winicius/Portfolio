@@ -7,11 +7,11 @@ export default function Landing() {
   return (
     <main className="flex flex-col items-center justify-center h-[calc(100vh-67px)]">
       <section className="text-center w-min mt-[-80px]">
-        <p className="text-2xl tracking-wider">Olá, Me chamo Lucas Winicius</p>
+        <p className="text-1xl sm:text-2xl tracking-wider">Olá, Me chamo Lucas Winicius</p>
         <h1
           className={
             montserrat.className +
-            " text-6xl font-semibold bg-gradient-to-r from-red-600 to-purple-400 text-transparent bg-clip-text"
+            " text-5xl sm:text-6xl font-semibold bg-gradient-to-r from-red-600 to-purple-400 text-transparent bg-clip-text"
           }
         >
           Desenvolvedor Fullstack

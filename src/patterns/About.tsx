@@ -5,9 +5,9 @@ function About() {
   return (
     <section className="h-screen">
       <Title title="Sobre Mim" className="text-2xl relative top-14 left-7" />
-      <article className="flex flex-col md:flex-row justify-center items-center h-full space-x-0 md:space-x-10">
+      <article className="flex flex-col md:flex-row justify-center items-center h-full space-y-10 md:space-x-10 md:space-y-0">
         <section className="w-full md:w-4/12 text-lg">
-          <p>
+          <p className="px-7 md:px-0">
             Olá, meu nome é Lucas Winicius. Atualmente, estou focado no estudo
             do <strong>backend</strong>. Desde 2021, venho me aprofundando em
             tecnologias como <strong>JavaScript</strong>, <strong>HTML</strong>{" "}

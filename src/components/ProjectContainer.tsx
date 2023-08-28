@@ -20,7 +20,7 @@ type ProjectType = {
 function ProjectContainer({ data }: { data: ProjectType }) {
   return (
     <section className="flex flex-row items-center space-x-3 w-3/4 h-max">
-      <div>
+      <div className="hidden md:block">
         <Carousel images={data.images} height={350} width={350} className="cursor-pointer" />
       </div>
       <div className="flex flex-col justify-between w-full space-y-3 h-max">

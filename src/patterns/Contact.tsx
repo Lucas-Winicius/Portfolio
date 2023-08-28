@@ -8,8 +8,8 @@ function Contact() {
   return (
     <section className="h-screen">
       <Title title="Contato" className="text-2xl relative top-14 left-7" />
-      <div className="h-full w-full flex justify-evenly items-center">
-        <article className="w-1/4 space-y-3">
+      <div className="h-full w-full flex justify-evenly items-center flex-col md:flex-row">
+        <article className="w-3/4 md:w-1/4 space-y-3">
           <p>
             Estou ansioso para ouvir suas ideias e necessidades. Fique à vontade
             para entrar em contato comigo. Se você tiver alguma pergunta ou
