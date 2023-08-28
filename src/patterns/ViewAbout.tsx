@@ -43,7 +43,7 @@ function ViewAbout() {
 
   if (about.id)
     return (
-      <div className="w-full h-full flex justify-center items-center flex-col space-y-4">
+      <section className="w-full h-full flex justify-center items-center flex-col space-y-4">
         <div className="flex flex-row space-x-2">
           <Article size={20} />
           <p></p>
@@ -98,11 +98,11 @@ function ViewAbout() {
         >
           Salvar
         </button>
-      </div>
+      </section>
     );
 
   return (
-    <div className="w-full h-full flex justify-center items-center flex-col space-y-4">
+    <section className="w-full h-full flex justify-center items-center flex-col space-y-4">
       <div className="flex flex-row space-x-2">
         <Article size={20} />
         <p></p>
@@ -157,7 +157,7 @@ function ViewAbout() {
       >
         Salvar
       </button>
-    </div>
+    </section>
   );
 }
 

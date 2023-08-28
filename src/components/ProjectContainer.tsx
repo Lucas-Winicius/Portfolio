@@ -19,7 +19,7 @@ type ProjectType = {
 
 function ProjectContainer({ data }: { data: ProjectType }) {
   return (
-    <div className="flex flex-row items-center space-x-3 w-3/4 h-max">
+    <section className="flex flex-row items-center space-x-3 w-3/4 h-max">
       <div>
         <Carousel images={data.images} height={350} width={350} className="cursor-pointer" />
       </div>
@@ -49,7 +49,7 @@ function ProjectContainer({ data }: { data: ProjectType }) {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

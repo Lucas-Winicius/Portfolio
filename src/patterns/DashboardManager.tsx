@@ -11,9 +11,9 @@ function DashboardManager() {
 
   if (mode == "projects") return <ViewProjects />;
   if (mode == "posts") return <ViewPosts />;
-  if (mode == "technologies") return <ViewTecs/>;
-  if (mode == "messages") return <ViewMessages/>;
-  if (mode == "about") return <ViewAbout/>;
+  if (mode == "technologies") return <ViewTecs />;
+  if (mode == "messages") return <ViewMessages />;
+  if (mode == "about") return <ViewAbout />;
 
   return <EmptyDashboard/>
 }

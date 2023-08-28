@@ -41,7 +41,7 @@ function Projects() {
   }, []);
 
   return (
-    <div className="h-screen">
+    <section className="h-screen">
       <Title title="Projetos" className="text-2xl relative top-14 left-7" />
       <div className="flex flex-col space-y-5 justify-center items-center h-full">
         {projects === undefined && <Loading />}
@@ -60,12 +60,12 @@ function Projects() {
             href="/projects"
             className={`flex items-center space-x-2 py-2 px-4 rounded text-zinc-500 hover:text-zinc-50 transition-colors arrow-animation`}
           >
-            <p>Ver mais</p>
+            <button>Ver mais</button>
             <ArrowRight size={16} />
           </Link>
         )}
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -123,7 +123,7 @@ function Project({ data }: { data: ProjectType }) {
   };
 
   return (
-    <div className="flex flex-col flex-wrap w-full h-min m-5 space-y-5">
+    <section className="flex flex-col flex-wrap w-full h-min m-5 space-y-5">
       <input
         type="text"
         name="name"
@@ -268,7 +268,7 @@ function Project({ data }: { data: ProjectType }) {
         </div>
       )}
       <hr className="border-neutral-800" />
-    </div>
+    </section>
   );
 }
 

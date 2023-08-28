@@ -1,6 +1,6 @@
 function Loading() {
   return (
-    <div className="flex h-full w-full justify-center items-center">
+    <section className="flex h-full w-full justify-center items-center">
       <div role="status">
         <svg
           aria-hidden="true"
@@ -20,7 +20,7 @@ function Loading() {
         </svg>
         <span className="sr-only">Loading...</span>
       </div>
-    </div>
+    </section>
   );
 }
 

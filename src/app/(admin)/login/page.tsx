@@ -63,7 +63,7 @@ export default function Login() {
     }
   };
   return (
-    <div>
+    <main>
       <div className="max-w-md mx-auto">
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -110,6 +110,6 @@ export default function Login() {
             return <FlashMessage {...params} key={`${index}${Date.now()}`} />;
           })}
       </div>
-    </div>
+    </main>
   );
 }

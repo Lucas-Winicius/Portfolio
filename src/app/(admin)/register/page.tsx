@@ -2,7 +2,6 @@
 import { ChangeEvent, useState } from "react";
 import FlashMessage from "@/components/FlashMessage";
 import Cookie from "js-cookie";
-import { useRouter } from "next/navigation";
 import axios from "axios";
 
 type FlashMessageTypes = {
@@ -16,7 +15,6 @@ type FlashHandler = (
 ) => void;
 
 export default function NewUser() {
-  const router = useRouter();
   const [flashMessages, setFlashMessages] = useState<FlashMessageTypes[]>([]);
   const [newUser, setNewUser] = useState({
     nick: "",
@@ -45,7 +43,7 @@ export default function NewUser() {
 
       Cookie.set(`UserToken`, response.auth, cookieConfig);
 
-      router.replace("/dashboard", { scroll: false })
+      document.location.replace("/dashboard")
     } catch (e: any) {
       const message =
         e.response?.data?.message || "Houve um erro desconhecido :[";
@@ -65,7 +63,7 @@ export default function NewUser() {
   };
 
   return (
-    <div className="flex items-center justify-center h-[calc(100vh-67px)]">
+    <main className="flex items-center justify-center h-[calc(100vh-67px)]">
       <div className="max-w-md mx-auto">
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -117,6 +115,6 @@ export default function NewUser() {
             return <FlashMessage {...params} key={`${index}${Date.now()}`} />;
           })}
       </div>
-    </div>
+    </main>
   );
 }

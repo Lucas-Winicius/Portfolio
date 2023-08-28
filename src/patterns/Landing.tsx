@@ -5,8 +5,8 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 
 export default function Landing() {
   return (
-    <div className="flex flex-col items-center justify-center h-[calc(100vh-67px)]">
-      <div className="text-center w-min mt-[-80px]">
+    <main className="flex flex-col items-center justify-center h-[calc(100vh-67px)]">
+      <section className="text-center w-min mt-[-80px]">
         <p className="text-2xl tracking-wider">Olá, Me chamo Lucas Winicius</p>
         <h1
           className={
@@ -16,7 +16,7 @@ export default function Landing() {
         >
           Desenvolvedor Fullstack
         </h1>
-      </div>
+      </section>
       <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center mb-5">
         <div className="flex flex-col items-center">
           <p className="mb-7 text-white text-opacity-60">Vamos começar</p>
@@ -25,6 +25,6 @@ export default function Landing() {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

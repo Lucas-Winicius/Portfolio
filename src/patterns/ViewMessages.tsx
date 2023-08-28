@@ -26,17 +26,17 @@ function ViewMessages() {
 
   if (!messages.length)
     return (
-      <div className="h-full w-full flex items-center justify-center">
+      <section className="h-full w-full flex items-center justify-center">
         <p className="text-xl font-extrabold">Nenhuma mensagem foi enviada</p>
-      </div>
+      </section>
     );
 
   return (
-    <div className="flex flex-col w-full space-y-7 mx-5">
+    <section className="flex flex-col w-full space-y-7 mx-5">
       {messages.map((message, id) => (
         <Message data={message} key={id} />
       ))}
-    </div>
+    </section>
   );
 }
 

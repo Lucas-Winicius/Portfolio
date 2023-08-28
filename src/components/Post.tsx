@@ -77,7 +77,7 @@ function Post({ data }: { data: Post }) {
   };
 
   return (
-    <div className="flex flex-col flex-wrap w-full h-min m-5 space-y-5">
+    <section className="flex flex-col flex-wrap w-full h-min m-5 space-y-5">
       <input
         type="text"
         name="title"
@@ -152,7 +152,7 @@ function Post({ data }: { data: Post }) {
         </div>
       )}
       <hr className="border-neutral-800" />
-    </div>
+    </section>
   );
 }
 

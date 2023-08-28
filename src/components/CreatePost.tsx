@@ -64,18 +64,18 @@ function CreatePost() {
 
   if (!closed) {
     return (
-      <div
+      <section
         onClick={() => setClosed(true)}
         className="flex items-center justify-center w-full p-4 space-x-2 mb-5 hover:bg-slate-800 mx-5 rounded cursor-pointer"
       >
         <Plus size={26} />
         <p>Adicionar Postagem</p>
-      </div>
+      </section>
     );
   }
 
   return (
-    <div className="flex flex-col flex-wrap w-full h-min m-5 space-y-5">
+    <section className="flex flex-col flex-wrap w-full h-min m-5 space-y-5">
       <input
         type="text"
         name="title"
@@ -128,7 +128,7 @@ function CreatePost() {
         </button>
       </div>
       <hr className="border-neutral-800" />
-    </div>
+    </section>
   );
 }
 
