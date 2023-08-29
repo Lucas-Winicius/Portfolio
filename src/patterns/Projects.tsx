@@ -2,10 +2,7 @@
 import Loading from "@/components/Loading";
 import ProjectContainer from "@/components/ProjectContainer";
 import Title from "@/components/Title";
-import {
-  filterVisibleProjects,
-  getLastTwoOrLess,
-} from "@/lib/preojectsMethods";
+import { filterVisibleProjects } from "@/lib/preojectsMethods";
 import { ArrowRight } from "@phosphor-icons/react";
 import axios from "axios";
 import Link from "next/link";
@@ -33,10 +30,9 @@ function Projects() {
       .then((response) => response.data)
       .then((data) => {
         const visibleProjects = filterVisibleProjects(data);
-        const lastFourProjects: ProjectType[] =
-          getLastTwoOrLess(visibleProjects);
+        const firstTwoProjects: ProjectType[] = visibleProjects.slice(0, 2);
 
-        setProjects(lastFourProjects);
+        setProjects(firstTwoProjects);
       });
   }, []);
 
