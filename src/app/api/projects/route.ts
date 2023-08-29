@@ -86,7 +86,11 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const projects = await prisma.project.findMany();
+    const projects = await prisma.project.findMany({
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
     return NextResponse.json(projects, { status: 200 });
   } catch (e) {
     return NextResponse.json({ status: 500, error: e }, { status: 500 });
