@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 function Linkedin({ showText }: { showText?: boolean }) {
-  const [linkedin, setLinkedin] = useState("#");
+  const [linkedin, setLinkedin] = useState();
 
   useEffect(() => {
     axios
@@ -13,6 +13,8 @@ function Linkedin({ showText }: { showText?: boolean }) {
       .then((response) => response.data)
       .then((data) => setLinkedin(data.linkedin));
   }, []);
+
+  if (!linkedin) return;
 
   return (
     <div>

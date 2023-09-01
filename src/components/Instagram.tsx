@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 function Instagram({ showText }: { showText?: boolean }) {
-  const [instagram, setInstagram] = useState("#");
+  const [instagram, setInstagram] = useState();
 
   useEffect(() => {
     axios
@@ -13,6 +13,8 @@ function Instagram({ showText }: { showText?: boolean }) {
       .then((response) => response.data)
       .then((data) => setInstagram(data.instagram));
   }, []);
+
+  if (!instagram) return;
 
   return (
     <div>

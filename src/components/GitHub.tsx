@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 function GitHub({ showText }: { showText?: boolean }) {
-  const [github, setGithub] = useState("#");
+  const [github, setGithub] = useState();
 
   useEffect(() => {
     axios
@@ -13,6 +13,8 @@ function GitHub({ showText }: { showText?: boolean }) {
       .then((response) => response.data)
       .then((data) => setGithub(data.github));
   }, []);
+
+  if (!github) return;
 
   return (
     <div>

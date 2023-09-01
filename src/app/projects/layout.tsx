@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "P",
+  title: "Projetos",
   description: "",
 };
 
@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="h-[calc(100vh-67px)] w-full flex flex-wrap space-y-5 justify-center items-center my-10">
+    <div className="w-full flex flex-wrap space-y-5 justify-center items-center my-10">
       {children}
     </div>
   );
