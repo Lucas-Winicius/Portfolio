@@ -1,7 +1,7 @@
-function Loading() {
+function Loading({ className }: { className?: string }) {
   return (
     <section className="flex h-full w-full justify-center items-center">
-      <div role="status">
+      <div role="status" className={className}>
         <svg
           aria-hidden="true"
           className="inline w-8 h-8 mr-2 animate-spin text-transparent fill-blue-600"
